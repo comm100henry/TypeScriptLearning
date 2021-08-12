@@ -1,13 +1,13 @@
 
 // Hello world example
-function showMessage(){
+function showMessage2(){
     let message: string = "hello world2";
     console.log(message);
     return "haha2";
 }
 
-showMessage();
-console.log(showMessage());
+showMessage2();
+console.log(showMessage2());
 
 
 
