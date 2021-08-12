@@ -41,7 +41,7 @@ interface ICreate2 {
     <T>(name: string, value: T): Array<T>;
   }
   
-  let myFunc2: ICreate2 = function (name: string, value: T): Array<T> {
+  let myFunc2: ICreate2 = function<T> (name: string, value: T): Array<T> {
     return [];
   };
   
