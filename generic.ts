@@ -35,15 +35,34 @@ let myFunc: ICreate = function (name: string, value: any): Array<any> {
   return [];
 };
 
-
-
 interface ICreate2 {
-    <T>(name: string, value: T): Array<T>;
-  }
-  
-  let myFunc2: ICreate2 = function<T> (name: string, value: T): Array<T> {
-    return [];
-  };
-  
+  <T>(name: string, value: T): Array<T>;
+}
 
-  let strArr2:string[] = myFunc2("henry", "love")
+let myFunc2: ICreate2 = function <T>(name: string, value: T): Array<T> {
+  return [];
+};
+
+let strArr2: string[] = myFunc2("henry", "love");
+
+// 泛型 类
+class GenericNumber<T> {
+  zeroValue!: T;
+  add!: (x: T, y: T) => T;
+}
+
+let myGenericNumber = new GenericNumber<number>();
+myGenericNumber.zeroValue = 0;
+myGenericNumber.add = function (x: number, y: number) {
+  return x + y;
+};
+console.log(myGenericNumber.add(myGenericNumber.zeroValue, 3));
+
+let myGenericString = new GenericNumber<string>();
+myGenericString.zeroValue = "";
+myGenericString.add = function (x: string, y: string) {
+  return x + y;
+};
+
+console.log(myGenericString.add(myGenericString.zeroValue, "+henry"));
+
