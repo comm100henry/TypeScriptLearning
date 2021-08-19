@@ -101,9 +101,36 @@ console.log("card: " + mypickedCard2.card + " of " + mypickedCard2.suit);
 //  简单的重载
 function getValue(value: string): string;
 function getValue(value: number): number;
-function getValue(value: string|number): string|number {
-    return value;
+function getValue(value: string | number): string | number {
+  return value;
 }
 
-let numValue:number = getValue(1);
-let strValue:string = getValue("hello");
+let numValue: number = getValue(1);
+let strValue: string = getValue("hello");
+
+//// Lambda Function, Fat Arrow Function, 箭头函数
+let lambdaFunc = (x: number, y: number): number => {
+  return x + y;
+};
+console.log("lambdaFunc returns " + lambdaFunc(2, 3));
+
+// Lambda Function without parameters
+let printFunc = () => {
+  console.log("Lambda Function without parameters");
+};
+printFunc();
+
+// Example: Arrow Function in Class. - A class can include an arrow function as a property, as shown below.
+class Employee2 {
+  empCode: number;
+  empName: string;
+
+  constructor(code: number, name: string) {
+    this.empName = name;
+    this.empCode = code;
+  }
+
+  display = () => console.log(this.empCode + " " + this.empName);
+}
+let emp = new Employee2(1, "Ram");
+emp.display();
